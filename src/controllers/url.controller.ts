@@ -18,10 +18,11 @@ export async function generateNewShortURL(req: Request, res: Response) {
     visitHistory: [],
   });
 
-  return res.status(200).json({
-    message: 'ok',
-    id: shortId,
-  });
+  // return res.status(200).json({
+  //   message: 'ok',
+  //   id: shortId,
+  // });
+  return res.render('home', { id: shortId });
 }
 
 export async function redirectURL(req: Request, res: Response) {
@@ -38,4 +39,8 @@ export async function redirectURL(req: Request, res: Response) {
     }
   );
   res.redirect(entry.redirectURL);
+}
+
+export async function test(req: Request, res: Response) {
+  return res.render('home');
 }

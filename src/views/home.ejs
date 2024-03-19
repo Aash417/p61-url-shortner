@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>Short that long url</h2>
+  <% if (locals.id ) {%>
+    <p>URL Generated: http://localhost:4000/api/v1/url/<%=id%>
+    </p>
+    <% } %>
+      <div class="">
+        <form action="url" method="post">
+          <label for="">Enter your original URL</label>
+          <input type="text" placeholder="https://example.com" name="url">
+          <button type="submit">Generate</button>
+        </form>
+      </div>
+</body>
+
+</html>

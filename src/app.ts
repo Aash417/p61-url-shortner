@@ -1,9 +1,14 @@
-import express from 'express';
-import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import express from 'express';
+import path from 'path';
 import urlRouter from './routes/url.router';
 
 const app = express();
+
+app.set('view engine', 'ejs');
+app.set('views', path.resolve('./src/views'));
+
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN,
@@ -19,7 +24,7 @@ app.use(
 );
 app.use(express.static('public'));
 app.use(cookieParser());
-app.set('view engine', 'ejs');
+
 // routes declare
 app.use('/api/v1', urlRouter);
 
